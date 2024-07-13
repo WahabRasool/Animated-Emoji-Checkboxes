@@ -1,0 +1,157 @@
+@charset "UTF-8";
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1em;
+  font-size: 1.5em;
+  max-width: 31.25em;
+}
+
+label {
+  display: flex;
+  position: relative;
+  margin-bottom: 0.75em;
+  padding: 0.375em 0.375em 0.375em 1.875em;
+  font-family: "Helvetica", sans-serif;
+  transition: color 0.15s ease-out;
+}
+label:active {
+  transform: translateY(0.03125em);
+}
+label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid lightgray;
+  border-radius: 0.1875em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 0;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+label:after {
+  content: "🙂";
+  position: absolute;
+  top: 0.25em;
+  left: 0.125em;
+  font-size: 1.25em;
+  opacity: 0;
+  transform: translateY(0.1875em);
+  -webkit-animation: emoji-out 0.5s forwards;
+          animation: emoji-out 0.5s forwards;
+  transition: opacity 0.15s 0.3s ease-out, transform 0.2s 0.3s ease-out;
+}
+
+[type=checkbox] {
+  display: none;
+}
+[type=checkbox]:checked + label {
+  color: peru;
+}
+[type=checkbox]:checked + label:before {
+  background-color: lightyellow;
+  border-color: darkkhaki;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0.1875em 0.375em -0.1875em;
+}
+[type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-animation: emoji-in 1s forwards;
+          animation: emoji-in 1s forwards;
+  transition-delay: 0s;
+}
+[type=checkbox]:checked + label:active:after {
+  transform: translateY(0.03125em);
+}
+
+@-webkit-keyframes emoji-in {
+  10% {
+    content: "😆";
+  }
+  10% {
+    content: "😆";
+  }
+  20% {
+    content: "😄";
+  }
+  30% {
+    content: "😁";
+  }
+  50% {
+    content: "🙂";
+  }
+  60% {
+    content: "🙂";
+  }
+  70% {
+    content: "😉";
+  }
+  80% {
+    content: "😉";
+  }
+  90% {
+    content: "🙂";
+  }
+  100% {
+    content: "🙂";
+  }
+}
+
+@keyframes emoji-in {
+  10% {
+    content: "😆";
+  }
+  10% {
+    content: "😆";
+  }
+  20% {
+    content: "😄";
+  }
+  30% {
+    content: "😁";
+  }
+  50% {
+    content: "🙂";
+  }
+  60% {
+    content: "🙂";
+  }
+  70% {
+    content: "😉";
+  }
+  80% {
+    content: "😉";
+  }
+  90% {
+    content: "🙂";
+  }
+  100% {
+    content: "🙂";
+  }
+}
+@-webkit-keyframes emoji-out {
+  from {
+    content: "😕";
+  }
+  to {
+    content: "☹️";
+  }
+}
+@keyframes emoji-out {
+  from {
+    content: "😕";
+  }
+  to {
+    content: "☹️";
+  }
+}
